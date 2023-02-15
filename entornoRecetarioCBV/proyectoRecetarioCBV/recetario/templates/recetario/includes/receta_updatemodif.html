@@ -1,0 +1,4 @@
+{% if request.user.is_authenticated %}
+    <a href="{% url 'borrarReceta' receta.id %}">Borrar</a>
+    <a href="{% url 'modificarReceta' receta.id %}">Modificar</a>
+{% endif %}

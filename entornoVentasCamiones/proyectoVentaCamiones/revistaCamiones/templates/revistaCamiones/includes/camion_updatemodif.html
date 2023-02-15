@@ -1,0 +1,8 @@
+{% if request.user.is_authenticated %}
+        <div class="col-md-6" style="text-align: center;">
+            <a href="{% url 'modificar' camion.id %}" class="btn btn-outline-warning">Modificar camión</a>
+        </div>
+        <div class="col-md-6" style="text-align: center;">
+            <a href="{% url 'borrar' camion.id %}" class="btn btn-outline-danger">Borrar camión</a>
+        </div>
+{% endif %}

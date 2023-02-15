@@ -1,0 +1,11 @@
+{# se importa el html base #}
+{% extends "recetario/base.html" %}
+
+{% block active0 %}
+    active
+{% endblock %}
+
+{% block contenido %}
+    Esta es la página de inicio<br>
+    <a href="{% url 'receta' %}">Ir a la receta</a>
+{% endblock %}

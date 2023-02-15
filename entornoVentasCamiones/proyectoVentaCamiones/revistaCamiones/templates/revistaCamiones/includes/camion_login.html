@@ -1,0 +1,6 @@
+{% if request.user.is_authenticated %}
+    <p style="position: absolute; top:10px; left:95%;"><a href="{% url 'logout' %}" class="btn btn-outline-danger">LogOut</a></p>
+{% else %}
+    <p style="position: absolute; top:10px; left:89%;"><a href="{% url 'registro' %}" class="btn btn-outline-warning">Registrarse</a></p>
+    <p style="position: absolute; top:10px; left:95%;"><a href="{% url 'login' %}" class="btn btn-outline-success">LogIn</a></p>
+{% endif %}

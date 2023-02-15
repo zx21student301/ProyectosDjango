@@ -1,0 +1,3 @@
+{% if request.user.is_authenticated %}
+    <p style="position: absolute; top:10px; left:87%;"><a href="{% url 'crear' %}" class="btn btn-outline-primary">Añadir camión</a></p>
+{% endif %}

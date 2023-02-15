@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado</title>
+</head>
+<body>
+    <a href="{% url 'crear' %}">Crear empresa</a>
+    <h1>Listado empresas</h1>
+
+    {% for e in empresa_list %}
+        <ul>
+            <li><a href="{% url 'detalle' e.id %}"> {{e.nombre}} </a></li>
+            <li>{{e.tipo}}</li>
+        </ul>
+        <hr>
+    {% endfor %}
+</body>
+</html>

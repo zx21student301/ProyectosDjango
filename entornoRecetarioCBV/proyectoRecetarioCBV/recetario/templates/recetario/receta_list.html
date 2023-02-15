@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado</title>
+</head>
+<body>
+    <h1>Listado de recetas</h1>
+    {% include 'recetario/includes/receta_crear.html' %}
+    {% for r in receta_list %}
+        <ul>
+            <li><a href="{% url 'detalles' r.id %}">{{ r.nombre }} {{ r.subnombre }}</a></li>
+            <li>{{ r.author }}</li>
+        </ul>
+        <hr>
+    {% endfor %}
+    
+</body>
+</html>

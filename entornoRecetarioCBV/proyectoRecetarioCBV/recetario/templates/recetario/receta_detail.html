@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles</title>
+</head>
+<body>
+    <h1>Detalles de la receta de {{ receta.nombre }} {{ receta.subnombre }}</h1>
+    <h5>Creada por {{ receta.author }}</h5>
+    <p><img src="/media/{{ receta.imagen }}"></p>
+    <p><ul><b>Ingredientes:</b></ul></p>
+    <p>{{ receta.ingredientes | linebreaks }}</p>
+    <p><ul><b>Elaboración:</b></ul></p>
+    <p>{{ receta.receta | linebreaks }}</p>
+    <p><ul><b>Categoria:</b></ul></p>
+    {% for cat in receta.categorias.all %}
+        <p>{{ cat.nombre }}</p>
+    {% endfor %}
+    {% include 'recetario/includes/receta_updatemodif.html' %}
+
+</body>
+</html>

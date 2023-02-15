@@ -1,0 +1,14 @@
+{# esto es un comentario #}
+{% extends "recetario/base.html" %}
+
+{% block contenido %}
+    <p>
+        {{ receta.nombre }}<br>
+        {{ receta.subnombre }}<br>
+        <img src="media/{{ receta.imagen }}" width="150px" ><br>
+        {{ receta.ingredientes }}<br>
+        {{ receta.receta }}<br>
+        {{ receta.created }}
+
+    </p>
+{% endblock %}

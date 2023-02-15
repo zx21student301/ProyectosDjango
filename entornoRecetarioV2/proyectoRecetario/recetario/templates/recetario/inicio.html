@@ -1,0 +1,11 @@
+{# esto es un comentario #}
+{% extends "recetario/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <div class="centrado">
+        <a href="{% url 'receta' %}">
+            <img id="imgInicio" src="{% static 'recetario/img/recetas.jpg' %}"/>
+        </a>
+    </div>
+{% endblock %}

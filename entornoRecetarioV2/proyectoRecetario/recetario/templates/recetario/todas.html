@@ -1,0 +1,21 @@
+{# esto es un comentario #}
+{% extends "recetario/base.html" %}
+
+{% block contenido %}
+    {% for receta in recetas %}
+        {{ receta.nombre }}<br>
+        {{ receta.subnombre }}<br>
+        {#filtros#}
+        {#variable|filtro#}
+        {{ receta.ingredientes | upper | linebreaks }}<br> {#coloca todo en mayusculas y luego los saltos de linea que aparezcan en la base de datos#}
+        {{ receta.receta | linebreaks }}<br>
+        {{ receta.created | date:"Y/F/D d"}}<br>
+        {{ receta.updated | date:"Y/F/D d"}}<br>
+        {% for categ in receta.categorias.all %}
+            <a href="{% url 'categoria' categ.id %}">{{ categ.nombre }}</a>
+        {% endfor %}
+        {% if not forloop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
